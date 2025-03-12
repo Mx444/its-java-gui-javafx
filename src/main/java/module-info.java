@@ -7,5 +7,5 @@ module com.example {
 
     exports com.example;
     exports lezione_10;
-
+    exports lezione_10.esercizio_1;
 }
