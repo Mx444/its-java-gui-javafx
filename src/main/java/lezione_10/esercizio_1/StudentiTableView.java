@@ -21,8 +21,10 @@ public class StudentiTableView extends Application {
 
         Label labelNome = new Label("Inserisci nome studente: ");
         TextField textFieldNome = new TextField();
+
         Label labelCognome = new Label("Inserisci cognome studente: ");
         TextField textFieldCognome = new TextField();
+
         Label labelVoto = new Label("Inserisci  voto studente: ");
         TextField textFieldVoto = new TextField();
         Button buttonNuovoStudente = new Button("Aggiungi studente");
@@ -41,8 +43,11 @@ public class StudentiTableView extends Application {
         ObservableList<Studente> dati = FXCollections.observableArrayList();
 
         buttonNuovoStudente.setOnAction(e -> {
-            Studente nuovoStudente = new Studente(textFieldNome.getText(), textFieldCognome.getText(),
-                    Integer.parseInt(textFieldVoto.getText()));
+            String getTextNome = textFieldNome.getText();
+            String getTextCognome = textFieldCognome.getText();
+            int getIntVoto = Integer.parseInt(textFieldVoto.getText());
+
+            Studente nuovoStudente = new Studente(getTextNome, getTextCognome, getIntVoto);
             dati.add(nuovoStudente);
         });
 
